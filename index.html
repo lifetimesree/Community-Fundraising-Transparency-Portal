@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Community Fundraising Transparency Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Community Fundraising Transparency Portal</h1>
+    <p><strong>Problem:</strong> Community fundraising suffers from unclear collection targets, contributions, and spending updates.</p>
+    <p><strong>Objective:</strong> A transparent platform to organize campaigns, accept donations, report expenses, and maintain an audit trail.</p>
+    <hr>
+
+    <!-- 1. CAMPAIGN CREATION -->
+    <div class="section">
+      <h3>1. Create Campaign</h3>
+      <label>Campaign Title:</label><br>
+      <input type="text" id="titleInput" placeholder="Enter campaign title"><br><br>
+
+      <label>Target Goal (₹):</label><br>
+      <input type="number" id="goalInput" placeholder="Enter goal amount"><br><br>
+
+      <button onclick="createCampaign()">Create Campaign</button>
+    </div>
+
+    <!-- 2. CAMPAIGN GOALS & PROGRESS -->
+    <div class="section">
+      <h3>2. Campaign Goals & Progress</h3>
+      <p>Title: <strong id="campaignTitle">No campaign yet</strong></p>
+      <p>Target Goal: ₹<strong id="targetGoal">0</strong></p>
+      <p>Total Raised: ₹<strong id="totalRaised">0</strong></p>
+      <p>Total Spent: ₹<strong id="totalSpent">0</strong></p>
+      <p>Remaining Balance: ₹<strong id="balance">0</strong></p>
+      <p>Verification Status: <strong id="status">Not Verified</strong></p>
+
+      <label>Progress:</label><br>
+      <progress id="progressBar" value="0" max="100"></progress>
+      <span id="progressText">0%</span>
+    </div>
+
+    <!-- 3. MAKE A CONTRIBUTION -->
+    <div class="section">
+      <h3>3. Make a Contribution (Donation)</h3>
+      <label>Donor Name:</label><br>
+      <input type="text" id="donorName" placeholder="Your name"><br><br>
+
+      <label>Amount (₹):</label><br>
+      <input type="number" id="donorAmount" placeholder="Amount"><br><br>
+
+      <button onclick="donate()">Donate</button>
+    </div>
+
+    <!-- 4. DONOR HISTORY -->
+    <div class="section">
+      <h3>4. Donor History</h3>
+      <table id="donorTable">
+        <tr>
+          <th>Donor Name</th>
+          <th>Amount</th>
+        </tr>
+      </table>
+    </div>
+
+    <!-- 5. EXPENSE REPORTING -->
+    <div class="section">
+      <h3>5. Expense Reporting</h3>
+      <label>Item Name:</label><br>
+      <input type="text" id="expenseItem" placeholder="e.g., Food boxes"><br><br>
+
+      <label>Amount (₹):</label><br>
+      <input type="number" id="expenseAmount" placeholder="e.g., 1000"><br><br>
+
+      <label>Bill / Receipt Number:</label><br>
+      <input type="text" id="expenseReceipt" placeholder="e.g., BILL-101"><br><br>
+
+      <button onclick="addExpense()">Add Expense</button>
+
+      <h4>Expense List</h4>
+      <table id="expenseTable">
+        <tr>
+          <th>Item</th>
+          <th>Amount</th>
+          <th>Receipt No.</th>
+          <th>Status</th>
+        </tr>
+      </table>
+    </div>
+
+    <!-- 6. CAMPAIGN UPDATES -->
+    <div class="section">
+      <h3>6. Campaign Updates</h3>
+      <input type="text" id="updateText" placeholder="Write an update">
+      <button onclick="postUpdate()">Post</button>
+      <ul id="updatesList"></ul>
+    </div>
+
+    <!-- 7. ADMIN VERIFICATION -->
+    <div class="section">
+      <h3>7. Admin Verification</h3>
+      <button onclick="verifyCampaign()">Verify Campaign</button>
+      <button onclick="verifyExpenses()">Approve Expenses</button>
+    </div>
+
+    <!-- 8. AUDIT TRAIL -->
+    <div class="section">
+      <h3>8. Audit Trail (Log)</h3>
+      <table id="auditTable">
+        <tr>
+          <th>Time</th>
+          <th>Action</th>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

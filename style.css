@@ -1,0 +1,95 @@
+/* Basic styling for the entire page */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 20px;
+}
+
+/* Center box containing all content */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 25px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+}
+
+/* Headings */
+h1 {
+  text-align: center;
+  color: #333333;
+}
+
+h2 {
+  color: #0056b3;
+  margin-top: 10px;
+}
+
+h3 {
+  color: #444444;
+}
+
+/* Each distinct section */
+.section {
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #dddddd;
+}
+
+/* Form inputs and buttons */
+input[type="text"],
+input[type="number"] {
+  width: 90%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #999999;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #0056b3;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: #003d80;
+}
+
+/* Tables for donor history, expenses, and audit trail */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table, th, td {
+  border: 1px solid #dddddd;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f0f0f0;
+}
+
+/* Progress bar width */
+progress {
+  width: 70%;
+  height: 20px;
+  margin-top: 8px;
+}
+
+/* List for updates */
+ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
